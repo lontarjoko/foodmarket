@@ -21,7 +21,56 @@ class Transaction extends Equatable {
     this.user,
   });
 
+  Transaction copyWith({
+    int id,
+    Food food,
+    int quantity,
+    int total,
+    DateTime dateTime,
+    TransactionStatus status,
+    User user,
+  }) {
+    return Transaction(
+      id: id ?? this.id,
+      food: food ?? this.food,
+      quantity: quantity ?? this.quantity,
+      total: total ?? this.total,
+      dateTime: dateTime ?? this.dateTime,
+      status: status ?? this.status,
+      user: user ?? this.user,
+    );
+  }
+
   @override
-  // TODO: implement props
   List<Object> get props => throw UnimplementedError();
 }
+
+List<Transaction> mockTransaction = [
+  Transaction(
+    id: 1,
+    food: mockFoods[1],
+    quantity: 5,
+    total: (mockFoods[1].price * 5 * 1.1).round() + 50000,
+    dateTime: DateTime.now(),
+    status: TransactionStatus.on_delivered,
+    user: mockUser,
+  ),
+  Transaction(
+    id: 1,
+    food: mockFoods[2],
+    quantity: 20,
+    total: (mockFoods[2].price * 20 * 1.1).round() + 50000,
+    dateTime: DateTime.now(),
+    status: TransactionStatus.delivered,
+    user: mockUser,
+  ),
+  Transaction(
+    id: 3,
+    food: mockFoods[3],
+    quantity: 8,
+    total: (mockFoods[3].price * 8 * 1.1).round() + 50000,
+    dateTime: DateTime.now(),
+    status: TransactionStatus.cancelled,
+    user: mockUser,
+  )
+];
