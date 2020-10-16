@@ -30,11 +30,11 @@ class FoodListItem extends StatelessWidget {
                 food.name,
                 style: blackFontStyle2,
                 maxLines: 1,
-                overflow: TextOverflow.clip,
+                overflow: TextOverflow.ellipsis,
               ),
               Text(
                 NumberFormat.currency(
-                  symbol: 'IDR',
+                  symbol: 'IDR ',
                   decimalDigits: 0,
                   locale: 'id-ID',
                 ).format(food.price),

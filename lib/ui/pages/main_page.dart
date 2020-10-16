@@ -34,10 +34,16 @@ class _MainPageState extends State<MainPage> {
                 child: FoodPage(),
               ),
               Center(
-                child: Text("Order"),
+                child: IlustrationPage(
+                  title: "Ouch! Hungry",
+                  subTitle: "Seems like you have not\nordered any food yet",
+                  picturePath: "assets/love_burger.png",
+                  buttonTitle1: "Find Foods",
+                  buttonTap1: () {},
+                ),
               ),
               Center(
-                child: Text("Profile"),
+                child: SuccessOrderPage(),
               ),
             ],
           )),

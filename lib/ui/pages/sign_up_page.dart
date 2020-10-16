@@ -19,7 +19,7 @@ class _SignUpPageState extends State<SignUpPage> {
         Get.back();
       },
       chlid: Column(
-        children: <Widget>[
+        children: [
           Container(
             width: 110,
             height: 110,

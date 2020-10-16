@@ -32,7 +32,7 @@ class FoodCard extends StatelessWidget {
               food.name,
               style: blackFontStyle2,
               maxLines: 1,
-              overflow: TextOverflow.clip,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           Padding(
