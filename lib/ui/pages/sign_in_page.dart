@@ -14,9 +14,9 @@ class _SignInPageState extends State<SignInPage> {
 
     return GeneralPage(
       title: 'Sign In',
-      subTitle: 'Find your best ever meal',
-      chlid: Column(
-        children: <Widget>[
+      subtitle: "Find your best ever meal",
+      child: Column(
+        children: [
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
@@ -37,12 +37,12 @@ class _SignInPageState extends State<SignInPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your email address"),
+                  hintText: 'Type your email address'),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Password",
               style: blackFontStyle2,
@@ -60,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your password"),
+                  hintText: 'Type your password'),
             ),
           ),
           Container(
@@ -80,7 +80,7 @@ class _SignInPageState extends State<SignInPage> {
                         borderRadius: BorderRadius.circular(8)),
                     color: mainColor,
                     child: Text(
-                      "Sign In",
+                      'Sign In',
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500),
                     ),
@@ -88,7 +88,7 @@ class _SignInPageState extends State<SignInPage> {
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.only(top: 16),
+            margin: EdgeInsets.only(top: 24),
             height: 45,
             padding: EdgeInsets.symmetric(horizontal: defaultMargin),
             child: isLoading
@@ -105,12 +105,12 @@ class _SignInPageState extends State<SignInPage> {
                         borderRadius: BorderRadius.circular(8)),
                     color: greyColor,
                     child: Text(
-                      "Create New Account",
+                      'Create New Account',
                       style: GoogleFonts.poppins(
                           color: Colors.white, fontWeight: FontWeight.w500),
                     ),
                   ),
-          ),
+          )
         ],
       ),
     );

@@ -2,37 +2,40 @@ part of 'pages.dart';
 
 class GeneralPage extends StatelessWidget {
   final String title;
-  final String subTitle;
+  final String subtitle;
   final Function onBackButtonPressed;
-  final Widget chlid;
+  final Widget child;
   final Color backColor;
 
   GeneralPage(
       {this.title = "Title",
-      this.subTitle = "subtitle",
+      this.subtitle = "subtitle",
       this.onBackButtonPressed,
-      this.chlid,
+      this.child,
       this.backColor});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-      children: <Widget>[
+      children: [
         Container(color: Colors.white),
-        SafeArea(child: Container(color: backColor ?? Colors.white)),
+        SafeArea(
+            child: Container(
+          color: backColor ?? Colors.white,
+        )),
         SafeArea(
           child: ListView(
-            children: <Widget>[
+            children: [
               Column(
-                children: <Widget>[
+                children: [
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                     width: double.infinity,
                     height: 100,
                     color: Colors.white,
                     child: Row(
-                      children: <Widget>[
+                      children: [
                         onBackButtonPressed != null
                             ? GestureDetector(
                                 onTap: () {
@@ -41,8 +44,8 @@ class GeneralPage extends StatelessWidget {
                                   }
                                 },
                                 child: Container(
-                                  width: defaultMargin,
-                                  height: defaultMargin,
+                                  width: 24,
+                                  height: 24,
                                   margin: EdgeInsets.only(right: 26),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -54,18 +57,18 @@ class GeneralPage extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
+                          children: [
                             Text(
                               title,
                               style: GoogleFonts.poppins(
                                   fontSize: 22, fontWeight: FontWeight.w500),
                             ),
                             Text(
-                              subTitle,
+                              subtitle,
                               style: GoogleFonts.poppins(
-                                  color: greyColor,
+                                  color: "8D92A3".toColor(),
                                   fontWeight: FontWeight.w300),
-                            ),
+                            )
                           ],
                         )
                       ],
@@ -76,7 +79,7 @@ class GeneralPage extends StatelessWidget {
                     width: double.infinity,
                     color: "FAFAFC".toColor(),
                   ),
-                  chlid ?? SizedBox()
+                  child ?? SizedBox()
                 ],
               ),
             ],

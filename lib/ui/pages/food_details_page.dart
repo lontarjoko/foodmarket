@@ -1,10 +1,10 @@
 part of 'pages.dart';
 
 class FoodDetailsPage extends StatefulWidget {
-  final Function onBackButtonPress;
+  final Function onBackButtonPressed;
   final Transaction transaction;
 
-  FoodDetailsPage({this.onBackButtonPress, this.transaction});
+  FoodDetailsPage({this.onBackButtonPressed, this.transaction});
 
   @override
   _FoodDetailsPageState createState() => _FoodDetailsPageState();
@@ -12,11 +12,12 @@ class FoodDetailsPage extends StatefulWidget {
 
 class _FoodDetailsPageState extends State<FoodDetailsPage> {
   int quantity = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: <Widget>[
+        children: [
           Container(
             color: mainColor,
           ),
@@ -30,16 +31,15 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
             width: double.infinity,
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: NetworkImage(widget.transaction.food.picturePath),
-              fit: BoxFit.cover,
-            )),
+                    image: NetworkImage(widget.transaction.food.picturePath),
+                    fit: BoxFit.cover)),
           )),
           SafeArea(
               child: ListView(
             children: [
               Column(
                 children: [
-                  // Todo:: Back Button
+                  //// Back Button
                   Container(
                     height: 100,
                     padding: EdgeInsets.symmetric(horizontal: defaultMargin),
@@ -47,8 +47,8 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       alignment: Alignment.centerLeft,
                       child: GestureDetector(
                         onTap: () {
-                          if (widget.onBackButtonPress != null) {
-                            widget.onBackButtonPress();
+                          if (widget.onBackButtonPressed != null) {
+                            widget.onBackButtonPressed();
                           }
                         },
                         child: Container(
@@ -56,23 +56,21 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           width: 30,
                           height: 30,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.black12,
-                          ),
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.black12),
                           child: Image.asset('assets/back_arrow_white.png'),
                         ),
                       ),
                     ),
                   ),
-                  // Todo:: Body
+                  //// Body
                   Container(
                     margin: EdgeInsets.only(top: 180),
                     padding: EdgeInsets.symmetric(vertical: 26, horizontal: 16),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
-                        ),
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20)),
                         color: Colors.white),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,13 +83,15 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                               children: [
                                 SizedBox(
                                   width: MediaQuery.of(context).size.width -
-                                      134, // (32 + 102)
+                                      134, // 32 + 102
                                   child: Text(
                                     widget.transaction.food.name,
                                     style: blackFontStyle2,
                                   ),
                                 ),
-                                SizedBox(height: 6),
+                                SizedBox(
+                                  height: 6,
+                                ),
                                 RatingStars(widget.transaction.food.rate)
                               ],
                             ),
@@ -151,7 +151,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           ),
                         ),
                         Text(
-                          'Ingredients',
+                          'Ingredients:',
                           style: blackFontStyle3,
                         ),
                         Container(
@@ -183,18 +183,21 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                               ],
                             ),
                             SizedBox(
-                                width: 163,
-                                height: 45,
-                                child: RaisedButton(
-                                  onPressed: () {},
-                                  color: mainColor,
-                                  elevation: 0,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8)),
-                                  child: Text('Order Now',
-                                      style: blackFontStyle3.copyWith(
-                                          fontWeight: FontWeight.w500)),
-                                )),
+                              width: 163,
+                              height: 45,
+                              child: RaisedButton(
+                                onPressed: () {},
+                                color: mainColor,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Text(
+                                  'Order Now',
+                                  style: blackFontStyle3.copyWith(
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            )
                           ],
                         )
                       ],

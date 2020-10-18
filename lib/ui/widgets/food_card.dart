@@ -2,6 +2,7 @@ part of 'widgets.dart';
 
 class FoodCard extends StatelessWidget {
   final Food food;
+
   FoodCard(this.food);
 
   @override
@@ -16,7 +17,7 @@ class FoodCard extends StatelessWidget {
             BoxShadow(spreadRadius: 3, blurRadius: 15, color: Colors.black12)
           ]),
       child: Column(
-        children: <Widget>[
+        children: [
           Container(
             height: 140,
             decoration: BoxDecoration(
@@ -32,7 +33,7 @@ class FoodCard extends StatelessWidget {
               food.name,
               style: blackFontStyle2,
               maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+              overflow: TextOverflow.clip,
             ),
           ),
           Padding(

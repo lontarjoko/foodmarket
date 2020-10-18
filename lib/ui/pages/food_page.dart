@@ -1,8 +1,6 @@
 part of 'pages.dart';
 
 class FoodPage extends StatefulWidget {
-  FoodPage({Key key}) : super(key: key);
-
   @override
   _FoodPageState createState() => _FoodPageState();
 }
@@ -16,10 +14,10 @@ class _FoodPageState extends State<FoodPage> {
         MediaQuery.of(context).size.width - 2 * defaultMargin;
 
     return ListView(
-      children: <Widget>[
+      children: [
         Column(
-          children: <Widget>[
-            // Todo:: HEADER
+          children: [
+            //// HEADER
             Container(
               padding: EdgeInsets.symmetric(horizontal: defaultMargin),
               color: Colors.white,
@@ -27,20 +25,20 @@ class _FoodPageState extends State<FoodPage> {
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
+                children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
+                    children: [
                       Text(
-                        "FoodMarket",
+                        'Food Market',
                         style: blackFontStyle1,
                       ),
                       Text(
-                        "Let's get some food",
+                        "Let's get some foods",
                         style:
                             greyFontStyle.copyWith(fontWeight: FontWeight.w300),
-                      )
+                      ),
                     ],
                   ),
                   Container(
@@ -56,21 +54,21 @@ class _FoodPageState extends State<FoodPage> {
                 ],
               ),
             ),
-            // Todo:: LIST OF FOOD
+            //// LIST OF FOOD
             Container(
               height: 258,
               width: double.infinity,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: <Widget>[
+                children: [
                   Row(
                     children: mockFoods
                         .map((e) => Padding(
                               padding: EdgeInsets.only(
-                                left:
-                                    (e == mockFoods.first) ? defaultMargin : 0,
-                                right: defaultMargin,
-                              ),
+                                  left: (e == mockFoods.first)
+                                      ? defaultMargin
+                                      : 0,
+                                  right: defaultMargin),
                               child: FoodCard(e),
                             ))
                         .toList(),
@@ -78,14 +76,14 @@ class _FoodPageState extends State<FoodPage> {
                 ],
               ),
             ),
-            // Todo:: LIST OF FOOD (TABS)
+            //// LIST OF FOOD (TABS)
             Container(
               width: double.infinity,
               color: Colors.white,
               child: Column(
-                children: <Widget>[
+                children: [
                   CustomTabBar(
-                    titles: ["New Taste", "Popular", "Recommended"],
+                    titles: ['New Taste', 'Popular', 'Recommended'],
                     selectedIndex: selectedIndex,
                     onTap: (index) {
                       setState(() {
@@ -93,7 +91,9 @@ class _FoodPageState extends State<FoodPage> {
                       });
                     },
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(
+                    height: 16,
+                  ),
                   Builder(builder: (_) {
                     List<Food> foods = (selectedIndex == 0)
                         ? mockFoods

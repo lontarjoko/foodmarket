@@ -11,21 +11,20 @@ class _AddressPageState extends State<AddressPage> {
     TextEditingController phoneController = TextEditingController();
     TextEditingController addressController = TextEditingController();
     TextEditingController houseNumController = TextEditingController();
-    TextEditingController cityController = TextEditingController();
 
     return GeneralPage(
-      title: "Address",
-      subTitle: "Make sure it's valid",
+      title: 'Address',
+      subtitle: "Make sure it's valid",
       onBackButtonPressed: () {
         Get.back();
       },
-      chlid: Column(
-        children: <Widget>[
+      child: Column(
+        children: [
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
             child: Text(
-              "Phone No.",
+              "Phone Number",
               style: blackFontStyle2,
             ),
           ),
@@ -41,12 +40,12 @@ class _AddressPageState extends State<AddressPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your phone number"),
+                  hintText: 'Type your phone number'),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Address",
               style: blackFontStyle2,
@@ -64,14 +63,14 @@ class _AddressPageState extends State<AddressPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your address"),
+                  hintText: 'Type your address'),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "House No.",
+              "House Number",
               style: blackFontStyle2,
             ),
           ),
@@ -87,36 +86,45 @@ class _AddressPageState extends State<AddressPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your house number"),
+                  hintText: 'Type your house number'),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "City",
               style: blackFontStyle2,
             ),
           ),
           Container(
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.black)),
-              child: DropdownButton(
-                  isExpanded: true,
-                  underline: SizedBox(),
-                  items: [
-                    DropdownMenuItem(
-                        child: Text('Bandung', style: blackFontStyle3)),
-                    DropdownMenuItem(
-                        child: Text('Jakarta', style: blackFontStyle3)),
-                    DropdownMenuItem(
-                        child: Text('Solo', style: blackFontStyle3))
-                  ],
-                  onChanged: (item) {})),
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black)),
+            child: DropdownButton(
+              isExpanded: true,
+              underline: SizedBox(),
+              items: [
+              DropdownMenuItem(
+                  child: Text(
+                'Bandung',
+                style: blackFontStyle3,
+              )),
+              DropdownMenuItem(
+                  child: Text(
+                'Jakarta',
+                style: blackFontStyle3,
+              )),
+              DropdownMenuItem(
+                  child: Text(
+                'Surabaya',
+                style: blackFontStyle3,
+              ))
+            ], onChanged: (item) {}),
+          ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.only(top: 24),
@@ -129,7 +137,7 @@ class _AddressPageState extends State<AddressPage> {
                   borderRadius: BorderRadius.circular(8)),
               color: mainColor,
               child: Text(
-                "Sign Up Now",
+                'Sign Up Now',
                 style: GoogleFonts.poppins(
                     color: Colors.black, fontWeight: FontWeight.w500),
               ),

@@ -1,23 +1,22 @@
 part of 'pages.dart';
 
-class IlustrationPage extends StatelessWidget {
+class IllustrationPage extends StatelessWidget {
   final String title;
-  final String subTitle;
+  final String subtitle;
   final String picturePath;
   final String buttonTitle1;
   final String buttonTitle2;
   final Function buttonTap1;
   final Function buttonTap2;
 
-  IlustrationPage({
-    @required this.title,
-    @required this.subTitle,
-    @required this.picturePath,
-    @required this.buttonTitle1,
-    this.buttonTitle2,
-    @required this.buttonTap1,
-    this.buttonTap2,
-  });
+  IllustrationPage(
+      {@required this.title,
+      @required this.subtitle,
+      @required this.picturePath,
+      @required this.buttonTap1,
+      this.buttonTap2,
+      @required this.buttonTitle1,
+      this.buttonTitle2});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class IlustrationPage extends StatelessWidget {
             style: blackFontStyle3.copyWith(fontSize: 20),
           ),
           Text(
-            subTitle,
+            subtitle,
             style: greyFontStyle.copyWith(fontWeight: FontWeight.w300),
             textAlign: TextAlign.center,
           ),
@@ -63,16 +62,18 @@ class IlustrationPage extends StatelessWidget {
                   width: 200,
                   height: 45,
                   child: RaisedButton(
-                    onPressed: buttonTap2,
+                    onPressed: buttonTap1,
                     color: '8D92A3'.toColor(),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    child: Text(buttonTitle2 ?? 'title',
-                        style: blackFontStyle3.copyWith(
-                            fontWeight: FontWeight.w500, color: Colors.white)),
+                    child: Text(
+                      buttonTitle2 ?? 'title',
+                      style:
+                          blackFontStyle3.copyWith(fontWeight: FontWeight.w500, color: Colors.white),
+                    ),
                   ),
-                ),
+                )
         ],
       ),
     );

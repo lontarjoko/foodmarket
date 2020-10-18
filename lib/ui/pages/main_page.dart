@@ -13,7 +13,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: <Widget>[
+        children: [
           Container(
             color: Colors.white,
           ),
@@ -29,21 +29,15 @@ class _MainPageState extends State<MainPage> {
                 selectedPage = index;
               });
             },
-            children: <Widget>[
+            children: [
               Center(
                 child: FoodPage(),
               ),
               Center(
-                child: IlustrationPage(
-                  title: "Ouch! Hungry",
-                  subTitle: "Seems like you have not\nordered any food yet",
-                  picturePath: "assets/love_burger.png",
-                  buttonTitle1: "Find Foods",
-                  buttonTap1: () {},
-                ),
+                child: OrderHistoryPage(),
               ),
               Center(
-                child: SuccessOrderPage(),
+                child: ProfilePage(),
               ),
             ],
           )),
@@ -58,7 +52,7 @@ class _MainPageState extends State<MainPage> {
                 pageController.jumpToPage(selectedPage);
               },
             ),
-          ),
+          )
         ],
       ),
     );

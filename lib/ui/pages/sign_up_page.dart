@@ -14,11 +14,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
     return GeneralPage(
       title: 'Sign Up',
-      subTitle: 'Register and eat',
+      subtitle: "Register and eat",
       onBackButtonPressed: () {
         Get.back();
       },
-      chlid: Column(
+      child: Column(
         children: [
           Container(
             width: 110,
@@ -39,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Full Name",
               style: blackFontStyle2,
@@ -57,12 +57,12 @@ class _SignUpPageState extends State<SignUpPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your full name"),
+                  hintText: 'Type your full name'),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Email Address",
               style: blackFontStyle2,
@@ -80,12 +80,12 @@ class _SignUpPageState extends State<SignUpPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your email address"),
+                  hintText: 'Type your email address'),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Password",
               style: blackFontStyle2,
@@ -103,7 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: "Type your password"),
+                  hintText: 'Type your password'),
             ),
           ),
           Container(
@@ -120,7 +120,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   borderRadius: BorderRadius.circular(8)),
               color: mainColor,
               child: Text(
-                "Continue",
+                'Continue',
                 style: GoogleFonts.poppins(
                     color: Colors.black, fontWeight: FontWeight.w500),
               ),
