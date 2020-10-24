@@ -1,0 +1,52 @@
+/* {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "foodmarket",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
+ */
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Flutter",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Pixel 3",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5554"
+        },
+        {
+            "name": "emulator-5556",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5556"
+        },
+        {
+            "name": "iPhone",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "6FDDCC5C-6A07-45E9-A7A6-CB86A4F870FB"
+        },
+    ],
+    "compounds": [{
+        "name": "All Devices",
+        "configurations": ["Pixel 3", "emulator-5556", "iPhone"],
+    }]
+}
